@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Image_PPM_Processing.cpp" />
+    <ClCompile Include="Image_PPM_Processing_MultiThreads.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="image\Input.ppm" />
