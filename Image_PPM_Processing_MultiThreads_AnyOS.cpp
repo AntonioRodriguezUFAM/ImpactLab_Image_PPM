@@ -1,5 +1,8 @@
-
-// PPM Image processing  - MultiThreads - Impact Lab 2023
+// PPM Image processing - MultiThreads - Impact Lab 2023
+/*
+This code should now be compatible with both Windows and Linux operating systems. 
+It uses preprocessor directives to include the necessary headers and handle system-specific functions
+*/
 
 #include <iostream>
 #include <fstream>
@@ -7,11 +10,16 @@
 #include <thread>
 #include <chrono> // Timer
 
+#ifdef _WIN32
+#include <windows.h> // Header for Windows OS
+#else
+#include <unistd.h> // Header for Linux OS
+#endif
+
 using namespace std;
 using namespace std::chrono; // Timer
 
-
-// Pixel 
+// Pixel
 struct Pixel {
     int r, g, b;
 };
@@ -72,19 +80,18 @@ public:
         }
         auto end = high_resolution_clock::now();
         auto duration = duration_cast<milliseconds>(end - start);
-        std::cout << "---------------  Run Secuential: Invert Color Time:" << duration.count() << "ms" << std::endl;
+        cout << "---------------  Run Sequential: Invert Color Time:" << duration.count() << "ms" << endl;
     }
 
     // PPM Image Filter processing - Multithreading
-    void TheadsinvertColors() {
-        const int num_threads = thread::hardware_concurrency();
+    void ThreadsInvertColors() {
+        int num_threads = thread::hardware_concurrency();
         vector<thread> threads(num_threads);
 
         int chunk_size = static_cast<int>(ceil(static_cast<double>(width * height) / num_threads));
         int remaining_pixels = width * height;
 
         auto start = high_resolution_clock::now();
-
 
         for (int i = 0; i < num_threads; i++) {
             int pixels_to_process = min(chunk_size, static_cast<int>(remaining_pixels));
@@ -111,48 +118,48 @@ public:
 
         auto end = high_resolution_clock::now();
         auto duration = duration_cast<milliseconds>(end - start);
-        std::cout << "---------------  Run Parallel: Invert Color Time:" << duration.count() << "ms" << std::endl;
-        
+        cout << "---------------  Run Parallel: Invert Color Time:" << duration.count() << "ms" << endl;
     }
-
-
 };
 
-
-
 int main() {
-
-    std::cout << std::endl;
-    std::cout << "----------------------------------------------------------------------" << std::endl;
-    std::cout << "-------------------------- IMPACT LAB 2023: ICOMP - UFAM   -----------" << std::endl;
-    std::cout << "--------------------------        TURMA 2023    ----------------------" << std::endl;
-    std::cout << std::endl;
-    std::cout << "--------------------------   Programação em Parallel -----------------" << std::endl;
-    std::cout << "                       CODE: PPM Image processing in C++              " << std::endl;
-    std::cout << "                         - Secuential VS Parallel -                   " << std::endl;
-
-    std::cout << "                         Prof. Antonio Souto Rodriguez                " << std::endl;
-    std::cout << "----------------------------------------------------------------------" << std::endl;
-    std::cout << std::endl;
+    cout << endl;
+    cout << "----------------------------------------------------------------------" << endl;
+    cout << "-------------------------- IMPACT LAB 2023: ICOMP - UFAM   -----------" << endl;
+    cout << "--------------------------        TURMA 2023    ----------------------" << endl;
+    cout << endl;
+    cout << "--------------------------   Programação em Parallel --------------------" << endl;
+    cout << "                       CODE: PPM Image processing in C++                 " << endl;
+    cout << "                         - Sequential VS Parallel -                      " << endl;
+    cout << "                         Prof. Antonio Souto Rodriguez                   " << endl;
+    cout << "----------------------------------------------------------------------" << endl;
+    cout << endl;
 
     Image image;
     image.loadPPM("image/Image01.ppm");
-    std::cout << "--------------------------   Load Images PPM     ---------------------" << std::endl;
-    std::cout << std::endl;
+    cout << "--------------------------   Load Images PPM     -------------------" << endl;
+    cout << endl;
 
-    std::cout << "----------------------  Run Secuential: Invert Color   ----------------" << std::endl;
-    std::cout << std::endl;
+    cout << "----------------------  Run Sequential: Invert Color   ---------------" << endl;
+    cout << endl;
     image.invertColors();       // Serial Code
-    std::cout << std::endl;
-    std::cout << "----------------------  Run Parallel: Invert Color   ------------------" << std::endl;
-    std::cout << std::endl;
-    image.TheadsinvertColors(); // Parallel Code
-    std::cout << std::endl;
+    cout << endl;
+    cout << "----------------------  Run Parallel: Invert Color   ---------------" << endl;
+    cout << endl;
+    image.ThreadsInvertColors(); // Parallel Code
+    cout << endl;
     image.savePPM("image/out/Parallel_output01.ppm");
-    std::cout << "--------------------------   Save Images PPM     -----------------------" << std::endl;
-    std::cout << std::endl;
-    std::cout << "                               Code: END                  " << std::endl;
+    cout << "--------------------------   Save Images PPM     -------------------" << endl;
+    cout << endl;
+    cout << "                               Code: END                  " << endl;
+
+#ifdef _WIN32
+    system("pause");
+#else
+    cout << "Press Enter to continue...";
+    cin.ignore();
+#endif
 
     return 0;
-
 }
+

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Image_PPM_Processing.cpp" />
     <ClCompile Include="Image_PPM_Processing_MultiThreads.cpp" />
+    <ClCompile Include="Image_PPM_Processing_MultiThreads_AnyOS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="image\Input.ppm" />
