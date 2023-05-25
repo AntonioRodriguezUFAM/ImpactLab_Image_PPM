@@ -18,12 +18,6 @@
     <ClCompile Include="Image_PPM_Processing_MultiThreads_AnyOS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Image_PPM_Processing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Image_PPM_Processing_MultiThreads.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="image\teapot.ppm" />
