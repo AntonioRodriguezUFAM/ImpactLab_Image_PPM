@@ -192,7 +192,7 @@ public:
 
         // Define parameters for optic flow calculation
         int windowSize = 5; // Size of the neighborhood window
-        double threshold = 1.0; // Threshold for motion detection
+        double threshold = 10; // Threshold for motion detection
 
         // Create a new image to store the motion vectors
         Image motionVectors(width, height, 255);
@@ -287,7 +287,7 @@ int main() {
     cout << endl;
 
     Image image;
-    image.loadPPM("image/Image01.ppm");
+    image.loadPPM("image/sample_5184×3456.ppm");
     cout << "--------------------------   Load Images PPM     -------------------" << endl;
     cout << endl;
 
@@ -295,6 +295,8 @@ int main() {
     cout << endl;
     image.invertColors();       // Serial Code
     cout << endl;
+    // Save images
+    image.savePPM("image/out/Parallel_outputserial.ppm");
     cout << "----------------------  Run Parallel: Invert Color   ---------------" << endl;
     cout << endl;
     image.ThreadsInvertColors(); // Parallel Code
@@ -314,7 +316,7 @@ int main() {
 
 
     // Save images
-    image.savePPM("image/out/Parallel_output001.ppm");
+    image.savePPM("image/out/Parallel_output.ppm");
     cout << "--------------------------   Save Images PPM     -------------------" << endl;
     cout << endl;
     cout << "                               Code: END                  " << endl;
