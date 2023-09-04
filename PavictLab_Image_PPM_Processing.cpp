@@ -68,6 +68,37 @@ public:
 };
 
 
+// Load Images - Read like std::Cin
+void Readimage()
+{
+    ifstream imageIn;
+    imageIn.open("image/Input.ppm");
+    imageIn.close();
+}
+
+void writeimage()
+{//ofstream image2; like std::Cout
+    ofstream newimage;
+    newimage.open("NewImage.ppm");
+    newimage.close();
+
+}
+// Read Header Images
+void ReadimageHeader()
+{
+
+    Readimage();
+    if (image2.is_open()) {
+        // place header info
+        image2 << "P3" << endl;
+        image2 << "250 250" << endl;
+        image2 << "255" << endl;
+
+}
+
+// Read Body Image
+
+// Save Images
 
 
 int main() {
