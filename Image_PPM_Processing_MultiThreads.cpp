@@ -127,24 +127,24 @@ int main() {
     std::cout << "-------------------------- IMPACT LAB 2023: ICOMP - UFAM   -----------" << std::endl;
     std::cout << "--------------------------        TURMA 2023    ----------------------" << std::endl;
     std::cout << std::endl;
-    std::cout << "--------------------------   Programação em Parallel --------------------" << std::endl;
-    std::cout << "                       CODE: PPM Image processing in C++                 " << std::endl;
-    std::cout << "                         - Secuential VS Parallel -                      " << std::endl;
+    std::cout << "--------------------------   Programação em Parallel -----------------" << std::endl;
+    std::cout << "                       CODE: PPM Image processing in C++              " << std::endl;
+    std::cout << "                         - Secuential VS Parallel -                   " << std::endl;
 
-    std::cout << "                         Prof. Antonio Souto Rodriguez                   " << std::endl;
+    std::cout << "                         Prof. Antonio Souto Rodriguez                " << std::endl;
     std::cout << "----------------------------------------------------------------------" << std::endl;
     std::cout << std::endl;
 
     Image image;
     image.loadPPM("image/Image01.ppm");
-    std::cout << "--------------------------   Load Images PPM     -------------------" << std::endl;
+    std::cout << "--------------------------   Load Images PPM     ---------------------" << std::endl;
     std::cout << std::endl;
 
-    std::cout << "----------------------  Run Secuential: Invert Color   ---------------" << std::endl;
+    std::cout << "----------------------  Run Secuential: Invert Color   ----------------" << std::endl;
     std::cout << std::endl;
     image.invertColors();       // Serial Code
     std::cout << std::endl;
-    std::cout << "----------------------  Run Parallel: Invert Color   ---------------" << std::endl;
+    std::cout << "----------------------  Run Parallel: Invert Color   ------------------" << std::endl;
     std::cout << std::endl;
     image.TheadsinvertColors(); // Parallel Code
     std::cout << std::endl;
