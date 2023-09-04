@@ -15,10 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="PavictLab_Image_PPM_Processing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Image_PPM_Processing_MultiThreads.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Image_PPM_Processing.cpp">
+    <ClCompile Include="ImpactLab_Image_PPM_Processing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,5 +29,10 @@
     <None Include="image\teapot.ppm" />
     <None Include="image\Input.ppm" />
     <None Include="image\out\output.ppm" />
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="image\Image01.ppm" />
+    <None Include="image\stop01.ppm" />
+    <None Include="image\znonstop01.ppm" />
   </ItemGroup>
 </Project>

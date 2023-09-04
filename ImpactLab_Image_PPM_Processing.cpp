@@ -92,7 +92,7 @@ int main() {
 
     image.invertColors();
 
-    image.savePPM("image/out/output.ppm");
+    image.savePPM("image/Outputs/output.ppm");
     std::cout << "--------------------------   Save Images PPM     -------------------" << std::endl;
     std::cout<<std::endl;
     std::cout << "                               Code: END                  " << std::endl;

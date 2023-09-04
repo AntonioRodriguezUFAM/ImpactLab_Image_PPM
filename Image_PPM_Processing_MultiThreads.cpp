@@ -148,7 +148,7 @@ int main() {
     std::cout << std::endl;
     image.TheadsinvertColors(); // Parallel Code
     std::cout << std::endl;
-    image.savePPM("image/out/Parallel_output01.ppm");
+    image.savePPM("image/Outputs/Parallel_output01.ppm");
     std::cout << "--------------------------   Save Images PPM     -------------------" << std::endl;
     std::cout << std::endl;
     std::cout << "                               Code: END                  " << std::endl;
