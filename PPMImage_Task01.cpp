@@ -3,7 +3,12 @@
 
 // Converte String to Int
 #include<sstream>
+/*
+- ifstream is input file stream which allows you to read the contents of a file. 
+- ofstream is output file stream which allows you to write contents to a file. 
+- fstream allows both reading from and writing to files by default.
 
+*/
 using namespace std;
 
 int main() {
@@ -61,7 +66,7 @@ int main() {
 	//image2.close();
 	newimage.close();
 
-	/*
+	
 		if (image2.is_open()) {
 			// place header info
 			image2 << "P3" << endl;
@@ -79,5 +84,5 @@ int main() {
 		image2.close();
 
 		return 0;
-		*/
+		
 }

@@ -143,11 +143,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Image_PPM_Processing_MultiThreads.cpp" />
-    <ClCompile Include="ImpactLab_Image_PPM_Processing.cpp" />
-    <ClCompile Include="PavictLab_Image_PPM_Processing.cpp" />
-    <ClCompile Include="PPMImage_Task01.cpp" />
-    <ClCompile Include="PPM_Class_Theads.cpp" />
+    <ClCompile Include="PPM_Turma2024.cpp" />
+    <ClCompile Include="Task02.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitattributes" />

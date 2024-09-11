@@ -15,19 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PavictLab_Image_PPM_Processing.cpp">
+    <ClCompile Include="PPM_Turma2024.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Image_PPM_Processing_MultiThreads.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ImpactLab_Image_PPM_Processing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PPMImage_Task01.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PPM_Class_Theads.cpp">
+    <ClCompile Include="Task02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
